@@ -25,6 +25,13 @@
     {
         margin: 0px auto;
         padding: 0px;
+        display: inline-block;
+        position: relative;
+    }
+    #salir:hover
+    {
+        background-color: rgba(0, 159, 194, 1);
+        color: #fff;
     }
     #ytplayer
     {
@@ -38,30 +45,48 @@
             height: 200px;
         }
     }
+    #salir
+    {
+        color: #ffffff;
+        width: 20px;
+        height: 20px;
+        background-color: rgba(0, 101, 149, 1);
+        border-radius: 50%;
+        padding: 20px;
+        box-sizing: content-box;
+        text-align: center;
+        
+    }
 </style>
 <script>
 
 </script>
 <body style="background-image: url(https://i.ytimg.com/vi/zgg1xGSGw0s/maxresdefault.jpg)">
     <h1>Vamos hacer un popUp de videosss </h1>
+    
     <div  id="video">
         Aqui va el contenido del videosssss
     </div>
 
-
     <script>
+        var video = document.getElementById('video');
         cartgaVideo();
         function cartgaVideo()
         {
+            var xSalir = '<div id="salir" onclick="saliendoVideo()">X</div>'
             var divInicio = '<div class="contenedorIframe" id="divInicio">';
             var divFin = "</div>";
-            var videoYoutube = divInicio + '<iframe id="ytplayer" src="https://www.youtube.com/embed/3NbiZrOeH4o?autoplay=1" frameborder="0" autoplay="1" allowfullscreen></iframe>' + divFin;
-            var video = document.getElementById('video');
+            var videoYoutube =  xSalir + divInicio + '<iframe id="ytplayer" src="https://www.youtube.com/embed/3NbiZrOeH4o?autoplay=1" frameborder="0" autoplay="1" allowfullscreen></iframe>' + divFin;
+            
             video.className = "videoContenedor";
 
             video.innerHTML = videoYoutube;
-        
-            
+        }
+
+        function saliendoVideo()
+        {
+            video.innerHTML = '';
+            video.classList.remove("videoContenedor");
         }
     </script>
 </body>
