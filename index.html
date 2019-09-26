@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script>
-    </script>
+
 </head>
-<body>
+
+<style>
+    .videoContenedor
+    {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body style="background-image: url(https://i.ytimg.com/vi/zgg1xGSGw0s/maxresdefault.jpg)">
     <h1>Vamos hacer un popUp de video</h1>
-    <div class="videoTutorial" id="video"></div>
+    <div  id="video">
+        Aqui va el contenido del video
+    </div>
+    
 
 
     <script>
@@ -18,7 +32,11 @@
     function cartgaVideo()
     {
         var video = document.getElementById('video');
+        video.className = "videoContenedor"
+
         video.innerHTML = "soy un texto loco";
+    
+        
     }
     </script>
 </body>
