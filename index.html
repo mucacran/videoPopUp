@@ -28,10 +28,16 @@
     }
     #ytplayer
     {
-        width: 400px;
-        height: 300px;
+        width: 800px;
+        height: 400px;
     }
-    
+    @media only screen and (max-width: 600px) {
+        #ytplayer
+        {
+            width: 300px;
+            height: 200px;
+        }
+    }
 </style>
 <script>
 
@@ -49,7 +55,7 @@
         {
             var divInicio = '<div class="contenedorIframe" id="divInicio">';
             var divFin = "</div>";
-            var videoYoutube = divInicio + '<iframe id="ytplayer" src="https://www.youtube.com/embed/3NbiZrOeH4o?autoplay=1" frameborder="0"  allowfullscreen></iframe>' + divFin;
+            var videoYoutube = divInicio + '<iframe id="ytplayer" src="https://www.youtube.com/embed/3NbiZrOeH4o?autoplay=1" frameborder="0" autoplay="1" allowfullscreen></iframe>' + divFin;
             var video = document.getElementById('video');
             video.className = "videoContenedor";
 
